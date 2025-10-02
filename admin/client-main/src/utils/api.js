@@ -11,6 +11,8 @@ export const fetchDataFromApi = async (url, params) => {
   }
 };
 
+
+
 export const postData = async (category) => {
   try {
     const res = await axios.post(`${API}/api/categories/create`, category);

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import Button from '@mui/material/Button';
 import { IoMdMenu } from "react-icons/io";
 import { CiGrid41 } from "react-icons/ci";
 import { PiDotsNineLight } from "react-icons/pi";
 import { PiGridNineFill } from "react-icons/pi";
 import Pagination from '@mui/material/Pagination';
-
+import { useParams } from "react-router-dom";
+import { fetchDataFromApi } from "../../utils/api";
 import {
   Grid,
   Typography,
@@ -110,6 +110,14 @@ const Listing = () => {
   const handleBrandChange = (brand) => {
     setSelectedBrand(brand === selectedBrand ? null : brand);
   };
+
+  const {id} = useParams();
+
+  useEffect(()=> {
+    fetchDataFromApi(()=>{
+
+    })
+  },[id])
 
   return (
     <div className="listing-container" style={{ display: "flex", gap: "20px", padding: "20px" }}>
